@@ -1,11 +1,10 @@
-package com.ichwan;
+package com.ichwan.books;
 
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import javax.print.attribute.standard.Media;
 import java.net.URI;
 import java.util.List;
 
@@ -50,8 +49,30 @@ public class BookResource {
         return Response.status(Response.Status.BAD_REQUEST).build();
     }
 
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("{id}")
+    @Transactional
+    public Response update(Book updatedBook, @PathParam("id") Long id){
+
+        Book book = Book.findById(id);
+        book.setTitle(updatedBook.getTitle());
+        book.setDescription(updatedBook.getDescription());
+        book.setIsbn(updatedBook.getIsbn());
+        book.setPages(updatedBook.getPages());
+        Book.persist(book);
+
+        if (book.isPersistent()) {
+            return Response.accepted(book).build();
+        }
+        return Response.status(Response.Status.BAD_REQUEST).build();
+    }
+
     @DELETE
+    @Transactional
     @Path("id")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response deleteById(@PathParam("id") Long id) {
         boolean deleted = Book.deleteById(id);
         if (deleted) {
@@ -60,6 +81,3 @@ public class BookResource {
         return Response.status(Response.Status.BAD_REQUEST).build();
     }
 }
-
-
-

@@ -1,9 +1,13 @@
-package com.ichwan;
+package com.ichwan.books;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 public class Book extends PanacheEntity {
 
