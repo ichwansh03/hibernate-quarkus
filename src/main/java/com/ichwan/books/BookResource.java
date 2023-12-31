@@ -37,6 +37,13 @@ public class BookResource {
                 .orElse(Response.status(Response.Status.NOT_FOUND).build());
     }
 
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response getTotalPrice(){
+//        Book.count("SELECT SUM(b.price) FROM Book b")
+//    }
+
+
     @POST
     @Transactional
     @Produces(MediaType.APPLICATION_JSON)
@@ -57,10 +64,13 @@ public class BookResource {
     public Response update(Book updatedBook, @PathParam("id") Long id){
 
         Book book = Book.findById(id);
-        book.setTitle(updatedBook.getTitle());
-        book.setDescription(updatedBook.getDescription());
-        book.setIsbn(updatedBook.getIsbn());
-        book.setPages(updatedBook.getPages());
+
+        book.title = updatedBook.title;
+        book.description = updatedBook.description;
+        book.isbn = updatedBook.isbn;
+        book.pages = updatedBook.pages;
+        book.price = updatedBook.price;
+
         Book.persist(book);
 
         if (book.isPersistent()) {
