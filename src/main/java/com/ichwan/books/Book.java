@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table()
 public class Book extends PanacheEntity {
 
     @Column(length = 100)
