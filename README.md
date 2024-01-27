@@ -70,7 +70,6 @@ Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
 
-
 ### Notes for this project
 
 * Anotasi `@Produces` digunakan untuk store value dari sebuah properties/method ke class lain, lalu diinject untuk mendapatkan value dari properties/method tersebut.
