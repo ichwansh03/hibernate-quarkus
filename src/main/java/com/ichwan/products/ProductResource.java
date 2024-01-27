@@ -16,10 +16,19 @@ public class ProductResource {
     @Inject
     List<String> type;
 
+    @Inject
+    private ProductService productService;
+
     @GET
     public Response print() {
         System.out.println(name);
         System.out.println(type);
+        return Response.ok().build();
+    }
+
+    @GET
+    public Response executes(){
+        productService.execute();
         return Response.ok().build();
     }
 }

@@ -69,3 +69,11 @@ Create your first JPA entity
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+
+### Notes for this project
+
+* Anotasi `@Produces` digunakan untuk store value dari sebuah properties/method ke class lain, lalu diinject untuk mendapatkan value dari properties/method tersebut.
+* Anotasi `@ApplicationScope` digunakan untuk me-refer sebuah object seperti pada class service dan bersifat lazy, dalam artian ketika ingin menggunakan method/properties pada class scoped tersebut, harus dipanggil terlebih dahulu.
+* Anotasi `@Singleton` sama dengan application scope, namun penggunaannya tidak direkomendasikan karena anotasi ini tidak dapat membuat mock bean untuk unit testing
+* Dokumentasi terkait context dependency injection, [read](https://quarkus.io/guides/cdi)

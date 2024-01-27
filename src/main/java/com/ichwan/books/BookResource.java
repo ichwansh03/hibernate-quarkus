@@ -57,10 +57,10 @@ public class BookResource {
     public Response update(Book updatedBook, @PathParam("id") Long id){
 
         Book book = Book.findById(id);
-        book.setTitle(updatedBook.getTitle());
-        book.setDescription(updatedBook.getDescription());
-        book.setIsbn(updatedBook.getIsbn());
-        book.setPages(updatedBook.getPages());
+        book.title = updatedBook.title;
+        book.description = updatedBook.description;
+        book.isbn = updatedBook.isbn;
+        book.pages = updatedBook.pages;
         Book.persist(book);
 
         if (book.isPersistent()) {

@@ -15,4 +15,8 @@ public class ProductService {
     List<String> type() {
         return List.of("Electronics", "Foods", "Farm");
     }
+
+    public void execute() {
+        System.out.println("execute service");
+    }
 }
