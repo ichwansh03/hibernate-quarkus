@@ -3,6 +3,7 @@ package com.ichwan.books;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 public class Book extends PanacheEntity {
@@ -13,9 +14,13 @@ public class Book extends PanacheEntity {
     @Column(length = 200)
     public String description;
 
-    @Column
     public String isbn;
 
-    @Column
     public Integer pages;
+
+    public Double price;
+
+    public static Book findByTitle(String title){
+        return find("title", title).firstResult();
+    }
 }

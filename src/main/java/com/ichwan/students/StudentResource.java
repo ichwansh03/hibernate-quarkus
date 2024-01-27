@@ -40,6 +40,13 @@ public class StudentResource {
     }
 
     @GET
+    @Path("nim/{nim}")
+    public Response getByNim(@PathParam("nim") String nim) {
+        Student student = studentRepository.findByNim(nim);
+        return Response.ok(student).build();
+    }
+
+    @GET
     @Path("gpa/{gpa}")
     public Response getByGpa(@PathParam("gpa") Double gpa) {
         List<Student> students = studentRepository.cumlaudeStudents(gpa);
