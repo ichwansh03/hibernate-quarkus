@@ -42,10 +42,45 @@ public class PersonResourceTest {
 
     @Test
     void testCreatePersonEndpoint() {
-        given().when().post()
+
+        PersonRequest personRequest = new PersonRequest("Ahmad", "Abdullah", "Metro");
+
+        given()
+                .contentType("application/json")
+                .body(personRequest)
+                .when().post()
                 .then().statusCode(200);
 
         Mockito.verify(personService, Mockito.times(1))
-                .create(new PersonRequest("Ahmad", "Abdullah", "Metro"));
+                .create(personRequest);
+    }
+
+    @Test
+    void testUpdatePersonEndpoint() {
+
+        PersonRequest personRequest = new PersonRequest("Budi", "Raharjo", "Metro");
+        var id = 1L;
+
+        given()
+                .contentType("application/json")
+                .body(personRequest)
+                .when().put("{id}",id)
+                .then()
+                .statusCode(200);
+
+        Mockito.verify(personService, Mockito.times(1))
+                .update(id, personRequest);
+    }
+
+    @Test
+    void testDeletePersonEndpoint() {
+        var id = 1L;
+
+        given()
+                .pathParam("id",id)
+                .when().delete("{id}")
+                .then().statusCode(200);
+
+        Mockito.verify(personService, Mockito.times(1)).delete(id);
     }
 }
