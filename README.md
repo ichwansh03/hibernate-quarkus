@@ -76,3 +76,4 @@ Easily start your RESTful Web Services
 * Anotasi `@ApplicationScope` digunakan untuk me-refer sebuah object seperti pada class service dan bersifat lazy, dalam artian ketika ingin menggunakan method/properties pada class scoped tersebut, harus dipanggil terlebih dahulu.
 * Anotasi `@Singleton` sama dengan application scope, namun penggunaannya tidak direkomendasikan karena anotasi ini tidak dapat membuat mock bean untuk unit testing
 * Dokumentasi terkait context dependency injection, [read](https://quarkus.io/guides/cdi)
+* Akses open API dengan localhost:8080/openapi
