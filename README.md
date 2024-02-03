@@ -1,3 +1,5 @@
+[Mengenal Quarkus Panache: Paradigma Baru dalam Java Persistence dan ORM](https://ichwansholihin.medium.com/mengenal-quarkus-panache-paradigma-baru-dalam-java-persistence-dan-orm-62db01b82f6f)
+
 # spring-with-quarkus
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
