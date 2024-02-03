@@ -1,4 +1,6 @@
 package com.ichwan.api.dto;
 
-public record PersonRequest(String firstname, String lastname, String address) {
+import jakarta.validation.constraints.NotBlank;
+
+public record PersonRequest(@NotBlank String firstname, @NotBlank String lastname, @NotBlank String address) {
 }
