@@ -1,4 +1,5 @@
 [How to build REST API and test with Quarkus (Panache ORM, Repository Pattern & QuarkusTest)](https://ichwansholihin.medium.com/how-to-build-rest-api-and-test-with-quarkus-panache-orm-repository-pattern-quarkustest-c325794f1f3f)
+
 [Mengenal Quarkus Panache: Paradigma Baru dalam Java Persistence dan ORM](https://ichwansholihin.medium.com/mengenal-quarkus-panache-paradigma-baru-dalam-java-persistence-dan-orm-62db01b82f6f)
 
 # spring-with-quarkus
